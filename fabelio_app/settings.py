@@ -25,7 +25,7 @@ SECRET_KEY = 'nclcl%6k7@e&v!zz4-q1cr^6xzbl91%c0mx+6%+*j+9fstz5^s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [fabelio-py-app.herokuapp.com]
 
 
 # Application definition
