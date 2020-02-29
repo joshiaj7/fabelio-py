@@ -3,3 +3,8 @@ gunicorn
 django-heroku
 pylint-django
 pre-commit
+dj-database-url
+postgres
+psycopg2
+pytz
+whitenoise
