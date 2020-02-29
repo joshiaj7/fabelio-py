@@ -6,5 +6,9 @@ def index(request, *args, **kwargs):
     return render(request, "home.html", {})
 
 
-# def index(request):
-#     return HttpResponse("<h1>WELCOME TO MY APP</h1>")
+def product_list_page(request, *args, **kwargs):
+    return render(request, "product_list.html", {})
+
+
+def product_detail_page(request, *args, **kwargs):
+    return render(request, "product_detail.html", {})
