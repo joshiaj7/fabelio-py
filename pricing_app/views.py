@@ -4,7 +4,7 @@ from .models import Product
 from .utils import parse_and_insert
 
 
-def index(request, *args, **kwargs):
+def index(request):
     url = request.POST.get("url")
     resp = ""
 
@@ -14,10 +14,11 @@ def index(request, *args, **kwargs):
     return render(request, "home.html", {"resp": resp})
 
 
-def product_list_page(request, *args, **kwargs):
+def product_list_page(request):
     product_list = Product.objects.all()
     return render(request, "product_list.html", {"product_list": product_list})
 
 
-def product_detail_page(request, id, *args, **kwargs):
-    return render(request, "product_detail.html", {})
+def product_detail_page(request, product_id):
+    product = Product.objects.get(id=product_id)
+    return render(request, "product_detail.html", {"product": product})
