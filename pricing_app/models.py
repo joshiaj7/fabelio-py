@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Product(models.Model):
+    id = models.AutoField(primary_key=True)
     link_str = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)

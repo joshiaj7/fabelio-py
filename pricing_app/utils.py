@@ -8,7 +8,6 @@ from django.http import Http404
 def clean_html_tag(text):
     cleanr = re.compile("<.*?>")
     cleantext = re.sub(cleanr, "", text)
-    # cleantext = re.sub(r"\n", '', cleantext)
     return cleantext
 
 
@@ -31,7 +30,7 @@ def parse_and_insert(url):
                 image = str(item.get("src"))
                 break
 
-        desc = str(desc)
+        desc = clean_html_tag(str(desc))
         price = int("".join(re.findall(r"\d+", str(price))))
         product_name = clean_html_tag(str(product_name))
 

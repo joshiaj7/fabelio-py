@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-<div>
-    <h1>FEELS LIKE HOME</h1>
-    <p>this is a template</p>
-</div>
-<div>
+<div align="center">
+    <h1>FABELIO</h1>
+    <h4>INSERT FABELIO PRODUCT URL BELOW</h4>
     <form method="POST"> {% csrf_token %}
         <input type="text" name="url" placeholder="insert url here">
         <input type="submit" value="Submit">

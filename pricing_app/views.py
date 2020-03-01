@@ -9,16 +9,15 @@ def index(request, *args, **kwargs):
     resp = ""
 
     if url and "fabelio.com" in url:
-        # url = 'https://fabelio.com/ip/kubos-2020-frame.html'
         resp = parse_and_insert(url)
 
     return render(request, "home.html", {"resp": resp})
 
 
 def product_list_page(request, *args, **kwargs):
-    # list = Product.objects.all()
-    return render(request, "product_list.html", {})
+    product_list = Product.objects.all()
+    return render(request, "product_list.html", {"product_list": product_list})
 
 
-def product_detail_page(request, *args, **kwargs):
+def product_detail_page(request, id, *args, **kwargs):
     return render(request, "product_detail.html", {})
