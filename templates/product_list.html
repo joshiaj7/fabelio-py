@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div align="center">
+<div align="center"> {% csrf_token %}
     {% if product_list %}
     <h1>THIS IS LIST</h1>
     <table border="1">
@@ -15,7 +15,7 @@
         </tr>
         {% for product in product_list %}
         <tr>
-            <td><a href="/product/{{product.id}}">{{product.id}}</a></td>
+            <td><a href="/product/{{ product.id }}">{{product.id}}</a></td>
             <td>{{product.link_str}}</td>
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>

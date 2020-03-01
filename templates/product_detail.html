@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div align="center"> {% csrf_token %}
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image }}">
+    <h3> Price : Rp {{ product.price }} </h3>
+    <p> {{ product.description }} </p>
+</div>
+{% endblock %}
