@@ -1,4 +1,4 @@
-django
+django==3.0.3
 gunicorn
 django-heroku
 pylint-django
@@ -6,5 +6,8 @@ pre-commit
 dj-database-url
 postgres
 psycopg2
-pytz
+pytz==2019.3
 whitenoise
+djangorestframework==3.11.0
+markdown==3.2.1
+django-filter==2.2.0
