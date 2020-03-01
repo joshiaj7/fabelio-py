@@ -1,19 +1,23 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Product
+from .utils import parse_and_insert
 
 
 def index(request, *args, **kwargs):
-    print("request POST: {}".format(request.POST))
-    print("request POST: {}".format(request.POST.get("url")))
+    url = request.POST.get("url")
+    resp = ""
 
-    return render(request, "home.html", {})
+    if url and "fabelio.com" in url:
+        resp = parse_and_insert(url)
+
+    return render(request, "home.html", {"resp": resp})
 
 
 def product_list_page(request, *args, **kwargs):
-    # list = Product.objects.all()
-    return render(request, "product_list.html", {})
+    product_list = Product.objects.all()
+    return render(request, "product_list.html", {"product_list": product_list})
 
 
-def product_detail_page(request, *args, **kwargs):
+def product_detail_page(request, id, *args, **kwargs):
     return render(request, "product_detail.html", {})
