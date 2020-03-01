@@ -7,9 +7,9 @@
     <p>this is a template</p>
 </div>
 <div>
-    <form action="submit">
-        <input type="text" name="url">
-        <button type="submit">Submit URL</button>
+    <form method="POST"> {% csrf_token %}
+        <input type="text" name="url" placeholder="insert url here">
+        <input type="submit" value="Submit">
     </form>
 </div>
 {% endblock %}
