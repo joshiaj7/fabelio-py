@@ -10,6 +10,8 @@ def index(request):
 
     if url and "fabelio.com" in url:
         resp = parse_and_insert(url)
+    else:
+        resp = "Not a valid fabelio product url"
 
     return render(request, "home.html", {"resp": resp})
 

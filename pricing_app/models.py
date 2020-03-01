@@ -11,3 +11,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def price_is_available(self):
+        return self.price > 0
