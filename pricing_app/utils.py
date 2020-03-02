@@ -22,12 +22,12 @@ def parse_and_insert(url):
         desc = soup.find(id="description")
         price = soup.find_all("span", class_="price")[0]
         product_name = soup.find_all("span", class_="base")[0]
-        images = soup.find_all("img")
+        image_div = soup.find_all("div")
 
         image = ""
-        for item in images:
-            if item.get("src") and "m2fabelio.imgix.net" in item.get("src"):
-                image = str(item.get("src"))
+        for item in image_div:
+            if item.get("href") and "m2fabelio.imgix.net" in item.get("href"):
+                image = str(item.get("href"))
                 break
 
         desc = clean_html_tag(str(desc))
