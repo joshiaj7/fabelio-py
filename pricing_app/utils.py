@@ -22,7 +22,7 @@ def parse_and_insert(url):
         desc = soup.find(id="description")
         price = soup.find_all("span", class_="price")[0]
         product_name = soup.find_all("span", class_="base")[0]
-        images = soup.find_all("img", class_="fotorama__img")
+        images = soup.find_all("img")
 
         image = ""
         for item in images:
