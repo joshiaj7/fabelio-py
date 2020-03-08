@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div align="center"> {% csrf_token %}
+<div align="center">
     <h1>{{ product.name }}</h1>
     <img src="{{ product.image }}">
     <h3> Price : Rp {{ product.price }} </h3>
